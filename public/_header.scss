@@ -1,0 +1,150 @@
+.backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.5;
+  height: 100vh;
+  width: 100vw;
+  background: $bgDark;
+}
+#drawerHook {
+  .sidebar {
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    position: fixed;
+    width: 70vw;
+    background: url("./sideBG.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    z-index: 9;
+    .sidebar-content {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .navlink {
+        font-weight: 500;
+        font-size: 1.5rem;
+        li {
+          display: block;
+          margin-bottom: 2rem;
+          a {
+            color: $textDark;
+          }
+        }
+
+        .selected {
+          width: 100%;
+          padding-bottom: 0.2rem;
+          border-bottom: solid 0.2rem $accentLight;
+          transition: border 0.5s ease;
+        }
+        .subfactbtn {
+          background: $secLight;
+          padding: 0.5rem;
+          border-style: none;
+          border-radius: 10px;
+          color: rgba($color: $textLight, $alpha: 0.8);
+          font-weight: 500;
+          font-size: 1.5rem;
+          transition: all 400ms ease-in-out;
+          &:hover {
+            background: $textLight;
+            color: $primaryLight;
+          }
+          i {
+            padding: 0 5px;
+          }
+        }
+      }
+    }
+  }
+}
+header {
+  .mainNav {
+    background: $primaryLight;
+    min-width: 100vw;
+    height: 4rem;
+    color: black;
+    padding: 1rem 0;
+    display: flex;
+    justify-content: center;
+    svg {
+      height: 2rem;
+      width: 2rem;
+      vertical-align: text-bottom;
+    }
+  }
+  .nav-content {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    .sidebar-btn-div {
+      display: none;
+      margin-left: auto;
+    }
+    .navlink {
+      margin-left: auto;
+      li {
+        display: inline-block;
+        margin-right: 2rem;
+        &:last-child {
+          margin-right: 0;
+        }
+        a {
+          color: $textLight;
+        }
+      }
+      .li-link {
+        &::after {
+          content: "";
+          display: block;
+          margin: auto;
+          margin-top: 0.2rem;
+          height: 0.2rem;
+          width: 0px;
+          background: transparent;
+          transition: width 0.5s ease, background-color 0.5s ease;
+        }
+        &:hover:after {
+          width: 100%;
+          background: $secLight;
+        }
+      }
+      .selected {
+        padding-bottom: 0.2rem;
+        border-bottom: solid 0.2rem $accentLight;
+        transition: border 200ms ease;
+      }
+      .subfactbtn {
+        background: $secLight;
+        padding: 0.5rem;
+        border-style: none;
+        border-radius: 10px;
+        color: rgba($color: $textLight, $alpha: 0.8);
+        font-weight: 500;
+        font-size: 1rem;
+        transition: all 400ms ease-in-out;
+        &:hover {
+          background: $textLight;
+          color: $primaryLight;
+        }
+        i {
+          padding: 0 5px;
+        }
+      }
+    }
+  }
+
+  .nav-brand-txt {
+    font-size: 2rem;
+    font-weight: bold;
+    color: $textLight;
+    padding-left: 0.5rem;
+  }
+}
