@@ -12,7 +12,7 @@ export default function FactList(props) {
   let postperpage = 4;
   const indexoflastPost = currentPage * postperpage;
   const indexoffirstpost = indexoflastPost - postperpage;
-  const currentPost = Data.slice(indexoffirstpost, indexoflastPost);
+  const currentPost = [...Data].slice(indexoffirstpost, indexoflastPost);
 
   function handlepage(event, value) {
     setCurrentPage(value);

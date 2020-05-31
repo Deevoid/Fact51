@@ -1,8 +1,14 @@
 import React, { useEffect } from "react";
 
+import Topten from "./Topten";
+
 export default function Daily() {
   useEffect(() => {
     document.title = "Daily Facts | Fact51";
   }, []);
-  return <div>Daily Top 10</div>;
+  return (
+    <div>
+      <Topten />
+    </div>
+  );
 }

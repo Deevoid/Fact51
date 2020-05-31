@@ -7,6 +7,7 @@ import Data from "../../Facts.json";
 
 export default function Fotd() {
   const day = new Date().getDay();
+
   const fact = Data[day % Data.length];
 
   return (
