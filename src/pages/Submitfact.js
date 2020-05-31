@@ -5,7 +5,7 @@ import * as Yup from "yup";
 import FormSubmit from "../components/FormSubmit";
 
 export default function SubmitFact() {
-  const [isSubmit, setSubmit] = useState(true);
+  const [isSubmit, setSubmit] = useState(false);
 
   useEffect(() => {
     document.title = "Submit Your Fact | Fact51";
@@ -18,16 +18,15 @@ export default function SubmitFact() {
     keywords: "",
   };
   const onSubmit = (value) => {
-    console.log(value);
     setSubmit(true);
   };
   const validationSchema = Yup.object({
-    name: Yup.string().required("Required!"),
+    name: Yup.string().required("*Required!"),
     email: Yup.string()
       .email("Please enter a correct email")
-      .required("Required!"),
-    category: Yup.string().required("Required!"),
-    keywords: Yup.string().required("Required!"),
+      .required("*Required!"),
+    category: Yup.string().required("*Required!"),
+    keywords: Yup.string().required("*Required!"),
   });
 
   return (

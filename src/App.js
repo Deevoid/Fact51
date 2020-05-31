@@ -7,8 +7,9 @@ import {
 } from "react-router-dom";
 import { Sugar } from "react-preloaders";
 
-import Homepage from "./pages/Homepage";
-import Daily from "./pages/Daily";
+import Homepage from "./pages/Homepage/Homepage";
+import SingleFact from "./pages/SingleFact";
+import Daily from "./pages/Daily/Daily";
 import SubmitFact from "./pages/Submitfact";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -22,11 +23,12 @@ function App() {
           <Route path="/" exact component={Homepage} />
           <Route path="/dailytop10" exact component={Daily} />
           <Route path="/submitFact" exact component={SubmitFact} />
+          <Route path="/:factId" exact component={SingleFact} />
           <Redirect to="/" />
         </Switch>
         <Footer />
       </Router>
-      <Sugar color={"#FF6584"} animation="slide" time={1000} />
+      {/* <Sugar color={"#FF6584"} animation="slide" time={1000} /> */}
     </React.Fragment>
   );
 }

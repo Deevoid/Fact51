@@ -1,12 +1,14 @@
 [
   {
+    "like": 2,
     "category": "History",
     "id": "10305",
-    "keywords": [],
+    "keywords": ["vikings"],
     "source": "https://bigthink.com/culture-religion/norse-rituals?rebelltitem=1#rebelltitem1",
-    "text": "Viking’s accidentally made a rudimentary form of steel when they tried to fuse the spirit of an animal or ancestor into a weapon. They would crush bones and fuse it into iron when forging weapons. – fact51 Source: https://bigthink.com/culture-religion/norse-rituals?rebelltitem=1#rebelltitem1"
+    "text": "Viking’s accidentally made a rudimentary form of steel when they tried to fuse the spirit of an animal or ancestor into a weapon. They would crush bones and fuse it into iron when forging weapons. – fact51"
   },
   {
+    "like": 20,
     "category": "Animals",
     "id": "10428",
     "keywords": [
@@ -24,10 +26,11 @@
     "text": "The otherwise adorable duck-billed platypus (Ornithorhynchus anatinus) has a venomous spur on its hind legs. The spur is only on the males and is non-lethal to humans but can be extremely painful. – fact51Source: http://poisonousnature.biodiversityexhibition.com/en/card/duck-billed-platypus"
   },
   {
+    "like": 1234,
     "category": "History",
     "id": "10152",
     "keywords": [
-      "jailer",
+      "prison",
       "Joseph BOlitho JOhns",
       "Moondyne Joe",
       "prison escape",
@@ -40,6 +43,7 @@
     "text": "Joseph “Moondyne Joe” Johns escaped prison so often that a special prison was built for him. The jailer was so confident in the new jail he promised to set Joe free if he ever escaped. Joe escaped and was caught 2 years later, but the jailer kept his word and freed him. – fact51"
   },
   {
+    "like": 420,
     "category": "Awesome",
     "id": "10518",
     "keywords": [
@@ -59,6 +63,7 @@
     "text": "Sgriob is a Gaelic word meaning “an itching of the lip, superstitiously supposed to precede a feast, a drink of whiskey, or a kiss from a favorite.” – fact51 Source: https://katexic.com/word/sgriob/"
   },
   {
+    "like": 620,
     "category": "Awesome",
     "id": "9786",
     "keywords": ["animal", "fact", "facts", "frog", "glue", "tomato frog"],
@@ -66,6 +71,7 @@
     "text": "The tomato frog’s defense mechanism is to secrete a glue that ultimately causes their predators lips to stick together."
   },
   {
+    "like": 520,
     "category": "People",
     "id": "9743",
     "keywords": ["birth", "equator", "fact", "facts", "sex ratio"],
@@ -73,6 +79,7 @@
     "text": "A 2009 study found that the closer a woman lives to the equator, the more likely she is to give birth to a female. "
   },
   {
+    "like": 820,
     "category": "Awesome",
     "id": "10218",
     "keywords": [
@@ -90,6 +97,7 @@
     "text": "A family taking a walk on a beach in Wales found a message in a bottle thrown into the ocean by a German couple 1,624 miles away and nearly four years earlier. – fact51"
   },
   {
+    "like": 920,
     "category": "People",
     "id": "9722",
     "keywords": [
