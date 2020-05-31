@@ -9,6 +9,7 @@ import Like from "./Like";
 
 export default function FactList(props) {
   const [currentPage, setCurrentPage] = useState(1);
+
   let postperpage = 4;
   const indexoflastPost = currentPage * postperpage;
   const indexoffirstpost = indexoflastPost - postperpage;
@@ -16,6 +17,7 @@ export default function FactList(props) {
 
   function handlepage(event, value) {
     setCurrentPage(value);
+    document.querySelector(".discover").scrollIntoView();
   }
   return (
     <div className="container">
@@ -51,6 +53,7 @@ export default function FactList(props) {
           onChange={handlepage}
           showFirstButton
           showLastButton
+          color="primary"
         />
       </div>
     </div>
