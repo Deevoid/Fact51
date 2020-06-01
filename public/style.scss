@@ -252,8 +252,10 @@
     .card-text {
       color: #fff;
       p {
+        width: 100%;
         line-height: 1.6;
         margin-bottom: 1rem;
+        word-wrap: break-word;
       }
       .span-source {
         color: #fff;
