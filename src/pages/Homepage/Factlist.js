@@ -12,8 +12,9 @@ import Like from "./Like";
 export default function FactList(props) {
   const [currentPage, setCurrentPage] = useState(1);
   const [currentPost, setCurrentPost] = useState([]);
+  const [postperpage, setPostPerPage] = useState(4);
+  const [isPaginate, setPaginate] = useState(true);
 
-  let postperpage = 4;
   const indexoflastPost = currentPage * postperpage;
   const indexoffirstpost = indexoflastPost - postperpage;
   const slicedArray = [...Data].slice(indexoffirstpost, indexoflastPost);
@@ -30,10 +31,15 @@ export default function FactList(props) {
     if (value) {
       let filteredArray = [...Data].filter((fact) => fact.category === value);
       setCurrentPost(filteredArray);
+      setPostPerPage(filteredArray.length);
+      setPaginate(false);
     } else {
       setCurrentPost(slicedArray);
+      setPaginate(true);
     }
   }
+  let ne = [...new Set([...Data].map((e) => e.category))];
+
   return (
     <div className="container">
       <div className="filter-box">
@@ -43,8 +49,8 @@ export default function FactList(props) {
             size="small"
             autoHighlight
             id="multiple-limit-tags"
-            options={Data}
-            getOptionLabel={(option) => option.category}
+            options={ne}
+            getOptionLabel={(option) => option.toString()}
             renderInput={(params) => (
               <TextField
                 {...params}
@@ -83,13 +89,15 @@ export default function FactList(props) {
         })}
       </div>
       <div className="paginate">
-        <Pagination
-          count={Math.ceil(Data.length / postperpage)}
-          onChange={handlepage}
-          showFirstButton
-          showLastButton
-          color="primary"
-        />
+        {isPaginate && (
+          <Pagination
+            count={Math.ceil(Data.length / postperpage)}
+            onChange={handlepage}
+            showFirstButton
+            showLastButton
+            color="primary"
+          />
+        )}
       </div>
     </div>
   );
