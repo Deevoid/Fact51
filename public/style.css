@@ -447,6 +447,11 @@ footer .footer-div p {
   padding: 1rem 0;
 }
 
+.filter-box {
+  display: inline-block;
+  width: 10rem;
+}
+
 .home-list {
   display: -ms-grid;
   display: grid;
@@ -460,7 +465,7 @@ footer .footer-div p {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  padding-top: 3rem;
+  padding-top: 1rem;
 }
 
 .home-list .card {
@@ -480,6 +485,7 @@ footer .footer-div p {
       -ms-flex-direction: column;
           flex-direction: column;
   width: 100%;
+  max-width: 369px;
   margin-bottom: 1rem;
   padding: 0;
   word-wrap: break-word;
@@ -679,7 +685,6 @@ footer .footer-div p {
 
 .fotd .card .card-text p {
   width: 100%;
-  display: inline-block;
   line-height: 1.6;
   margin-bottom: 1rem;
   word-wrap: break-word;
@@ -700,6 +705,7 @@ footer .footer-div p {
 }
 
 .discover {
+  margin: 2rem 0;
   text-align: center;
 }
 

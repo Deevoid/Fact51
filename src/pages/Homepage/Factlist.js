@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Unsplash from "react-unsplash-wrapper";
 import { Link } from "react-router-dom";
 import Pagination from "@material-ui/lab/Pagination";
+import Autocomplete from "@material-ui/lab/Autocomplete";
+import TextField from "@material-ui/core/TextField";
 
 import FactCard from "./FactCard";
 import Data from "../../Facts.json";
@@ -9,18 +11,51 @@ import Like from "./Like";
 
 export default function FactList(props) {
   const [currentPage, setCurrentPage] = useState(1);
+  const [currentPost, setCurrentPost] = useState([]);
 
   let postperpage = 4;
   const indexoflastPost = currentPage * postperpage;
   const indexoffirstpost = indexoflastPost - postperpage;
-  const currentPost = [...Data].slice(indexoffirstpost, indexoflastPost);
+  const slicedArray = [...Data].slice(indexoffirstpost, indexoflastPost);
+
+  useEffect(() => {
+    setCurrentPost(slicedArray);
+  }, [currentPage]);
 
   function handlepage(event, value) {
     setCurrentPage(value);
     document.querySelector(".discover").scrollIntoView();
   }
+  function handleSearch(event, value) {
+    if (value) {
+      let filteredArray = [...Data].filter((fact) => fact.category === value);
+      setCurrentPost(filteredArray);
+    } else {
+      setCurrentPost(slicedArray);
+    }
+  }
   return (
     <div className="container">
+      <div className="filter-box">
+        {
+          <Autocomplete
+            onInputChange={handleSearch}
+            size="small"
+            autoHighlight
+            id="multiple-limit-tags"
+            options={Data}
+            getOptionLabel={(option) => option.category}
+            renderInput={(params) => (
+              <TextField
+                {...params}
+                variant="outlined"
+                label="Filter:"
+                placeholder="Categories"
+              />
+            )}
+          />
+        }
+      </div>
       <div className="home-list">
         {currentPost.map((fact) => {
           return (
