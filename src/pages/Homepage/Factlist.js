@@ -12,7 +12,7 @@ import Like from "./Like";
 export default function FactList(props) {
   const [currentPage, setCurrentPage] = useState(1);
   const [currentPost, setCurrentPost] = useState([]);
-  const [postperpage, setPostPerPage] = useState(4);
+  const [postperpage, setPostPerPage] = useState(8);
   const [isPaginate, setPaginate] = useState(true);
 
   const indexoflastPost = currentPage * postperpage;
@@ -31,10 +31,11 @@ export default function FactList(props) {
     if (value) {
       let filteredArray = [...Data].filter((fact) => fact.category === value);
       setCurrentPost(filteredArray);
-      setPostPerPage(filteredArray.length);
+
       setPaginate(false);
     } else {
       setCurrentPost(slicedArray);
+
       setPaginate(true);
     }
   }
