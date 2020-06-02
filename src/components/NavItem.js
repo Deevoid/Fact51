@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 import SubfactButton from "./SubfactButton";
 
-export default function Navlink(props) {
+export default function NavItem(props) {
   return (
     <ul className="navlink">
       <li className="li-link">

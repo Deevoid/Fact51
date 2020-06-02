@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import { HamburgerElastic } from "react-animated-burgers";
 import ScrollLock from "react-scrolllock";
+import { Navlink } from "react-router-dom";
 
-import Navlink from "./Navlink";
+import NavItem from "./NavItem";
 import Logo from "./Logo";
 import Sidebar from "./shared/Sidebar";
 import Backdrop from "./shared/Backdrop";
@@ -33,7 +34,7 @@ export default function Navbar(props) {
         <div className="container">
           <div className="nav-content">
             <Logo />
-            <Navlink />
+            <NavItem />
             <div className="sidebar-btn-div">
               <HamburgerElastic
                 isActive={toggle}
