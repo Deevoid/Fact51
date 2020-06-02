@@ -79,6 +79,7 @@ export default function FactList(props) {
               cardHeader={<Like nana={fact.like} idfact={fact.id} />}
               cardBody={
                 <>
+                  <p className="span-category">Category: {fact.category}</p>
                   <p className="fact-text">{fact.text}</p>
                   <Link to={`/${fact.id}`}>
                     <p className="read-more">Read More</p>

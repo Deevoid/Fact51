@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import Unsplash from "react-unsplash-wrapper";
 
 import Data from "../Facts.json";
+import Like from "./Homepage/Like";
 
 export default function SingleFact(props) {
   const factId = useParams().factId;
@@ -12,19 +13,26 @@ export default function SingleFact(props) {
     <div className="full-fact">
       <div className="container">
         <div className="fact-img">
-          <Unsplash
-            width="300"
-            height="300"
-            keywords={fact.keywords.toString()}
-            img
-          />
+          <Unsplash keywords={fact.keywords.toString()} />
         </div>
+        <div className="img-overlay"></div>
         <div className="fact-text">
           <span className="span-category">Category: {fact.category} </span>
           <a href={fact.source} target="_blank" rel="noopener noreferrer">
             <span className="span-source">View source</span>
           </a>
-          <p>{fact.text}</p>
+          <p className="fact-p">{fact.text}</p>
+
+          <div className="keywords">
+            <span>Keywords :</span>
+
+            {fact.keywords.map((e) => {
+              return <span className="single-keywords">{e} </span>;
+            })}
+          </div>
+          <div className="like-div">
+            {<Like nana={fact.like} idfact={fact.id} />}
+          </div>
         </div>
       </div>
     </div>

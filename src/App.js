@@ -21,7 +21,7 @@ function App() {
         <Navbar />
         <Switch>
           <Route path="/" exact component={Homepage} />
-          <Route path="/dailytop10" exact component={Daily} />
+          <Route path="/top10" exact component={Daily} />
           <Route path="/submitFact" exact component={SubmitFact} />
           <Route path="/:factId" exact component={SingleFact} />
           <Redirect to="/" />

@@ -152,6 +152,15 @@
         cursor: pointer;
         display: inline-block;
       }
+      .span-category {
+        display: inline-block;
+        color: #fff;
+        background: $accentLight;
+        padding: 0.3rem 0.6rem 0.3rem 0.6rem;
+        border-radius: 20px;
+        margin: 0 0 0.8rem 0;
+        font-size: 0.8rem;
+      }
     }
   }
 }
@@ -159,14 +168,27 @@
   padding-top: 3rem;
 
   .fact-img {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    img {
-      border-radius: 20px 0 20px 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: -2;
+    top: 0;
+    left: 0;
+    div {
+      background-size: cover;
+      height: 100% !important;
+      width: 100% !important;
+      filter: brightness(50%);
     }
   }
   .fact-text {
+    position: relative;
+
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(15px);
+    // background: rgba($color: #000000, $alpha: 0.6);
+    color: #fff;
+    height: 100%;
     overflow-wrap: break-word;
     margin-top: 1rem;
     overflow: hidden;
@@ -180,7 +202,24 @@
         0px 24px 38px 3px rgba(0, 0, 0, 0.14),
         0px 9px 46px 8px rgba(0, 0, 0, 0.12);
     }
+
+    .like-div {
+      border-top: solid 1.5px $accentLight;
+      padding: 0 1rem;
+      display: flex;
+      justify-content: space-between;
+      p {
+        padding-top: 1.5rem;
+        padding-right: 1rem;
+        font-weight: 500;
+        font-size: 0.9rem;
+      }
+      .like-btn {
+        cursor: pointer;
+      }
+    }
     .span-category {
+      display: inline-block;
       color: #fff;
       background: $accentLight;
       padding: 0.3rem 0.6rem 0.3rem 0.6rem;
@@ -189,16 +228,48 @@
       font-size: 0.8rem;
     }
     .span-source {
+      display: inline-block;
       color: #fff;
       background: rgb(0, 68, 204);
       padding: 0.3rem 0.6rem 0.3rem 0.6rem;
       border-radius: 20px;
       font-size: 0.8rem;
     }
-    p {
-      margin-top: 1rem;
+    .fact-p {
+      margin-top: 1.5rem;
       line-height: 1.6;
       text-align: justify;
+      position: relative;
+      padding-left: 0.5rem;
+      &::before {
+        content: "";
+        position: absolute;
+        background-color: $primaryLight;
+        width: 0.19rem;
+        height: 1.4rem;
+        top: 0;
+        left: 0;
+      }
+    }
+
+    .keywords {
+      height: 100%;
+      width: 100%;
+      margin-top: 1rem;
+      margin-bottom: 0.3rem;
+      span {
+        font-weight: 500;
+      }
+      font-size: 0.8rem;
+      .single-keywords {
+        color: rgb(214, 214, 214);
+        display: inline-block;
+        font-weight: normal;
+        margin: 0.2rem;
+        padding: 0.1rem 0.3rem;
+        border: solid 1px rgb(211, 211, 211);
+        border-radius: 20px;
+      }
     }
   }
 }
@@ -262,11 +333,17 @@
         margin-bottom: 1rem;
         word-wrap: break-word;
       }
+      a {
+        position: absolute;
+        z-index: 3;
+        bottom: 13px;
+        left: 10px;
+      }
       .span-source {
         color: #fff;
         background: rgb(0, 68, 204);
         padding: 0.3rem 0.6rem 0.3rem 0.6rem;
-        border-radius: 20px;
+        border-radius: 10px;
         font-size: 0.8rem;
       }
     }

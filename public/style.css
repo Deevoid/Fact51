@@ -547,27 +547,44 @@ footer .footer-div p {
   display: inline-block;
 }
 
+.home-list .card .card-body .span-category {
+  display: inline-block;
+  color: #fff;
+  background: #ff6584;
+  padding: 0.3rem 0.6rem 0.3rem 0.6rem;
+  border-radius: 20px;
+  margin: 0 0 0.8rem 0;
+  font-size: 0.8rem;
+}
+
 .full-fact {
   padding-top: 3rem;
 }
 
 .full-fact .fact-img {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: -2;
+  top: 0;
+  left: 0;
 }
 
-.full-fact .fact-img img {
-  border-radius: 20px 0 20px 0;
+.full-fact .fact-img div {
+  background-size: cover;
+  height: 100% !important;
+  width: 100% !important;
+  -webkit-filter: brightness(50%);
+          filter: brightness(50%);
 }
 
 .full-fact .fact-text {
+  position: relative;
+  background: rgba(0, 0, 0, 0.2);
+  -webkit-backdrop-filter: blur(15px);
+          backdrop-filter: blur(15px);
+  color: #fff;
+  height: 100%;
   overflow-wrap: break-word;
   margin-top: 1rem;
   overflow: hidden;
@@ -586,7 +603,30 @@ footer .footer-div p {
           box-shadow: 0px 11px 15px -7px rgba(0, 0, 0, 0.2), 0px 24px 38px 3px rgba(0, 0, 0, 0.14), 0px 9px 46px 8px rgba(0, 0, 0, 0.12);
 }
 
+.full-fact .fact-text .like-div {
+  border-top: solid 1.5px #ff6584;
+  padding: 0 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.full-fact .fact-text .like-div p {
+  padding-top: 1.5rem;
+  padding-right: 1rem;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.full-fact .fact-text .like-div .like-btn {
+  cursor: pointer;
+}
+
 .full-fact .fact-text .span-category {
+  display: inline-block;
   color: #fff;
   background: #ff6584;
   padding: 0.3rem 0.6rem 0.3rem 0.6rem;
@@ -596,6 +636,7 @@ footer .footer-div p {
 }
 
 .full-fact .fact-text .span-source {
+  display: inline-block;
   color: #fff;
   background: #0044cc;
   padding: 0.3rem 0.6rem 0.3rem 0.6rem;
@@ -603,10 +644,44 @@ footer .footer-div p {
   font-size: 0.8rem;
 }
 
-.full-fact .fact-text p {
-  margin-top: 1rem;
+.full-fact .fact-text .fact-p {
+  margin-top: 1.5rem;
   line-height: 1.6;
   text-align: justify;
+  position: relative;
+  padding-left: 0.5rem;
+}
+
+.full-fact .fact-text .fact-p::before {
+  content: "";
+  position: absolute;
+  background-color: #5c53cb;
+  width: 0.19rem;
+  height: 1.4rem;
+  top: 0;
+  left: 0;
+}
+
+.full-fact .fact-text .keywords {
+  height: 100%;
+  width: 100%;
+  margin-top: 1rem;
+  margin-bottom: 0.3rem;
+  font-size: 0.8rem;
+}
+
+.full-fact .fact-text .keywords span {
+  font-weight: 500;
+}
+
+.full-fact .fact-text .keywords .single-keywords {
+  color: #d6d6d6;
+  display: inline-block;
+  font-weight: normal;
+  margin: 0.2rem;
+  padding: 0.1rem 0.3rem;
+  border: solid 1px lightgray;
+  border-radius: 20px;
 }
 
 .fotd {
@@ -690,11 +765,18 @@ footer .footer-div p {
   word-wrap: break-word;
 }
 
+.fotd .card .card-text a {
+  position: absolute;
+  z-index: 3;
+  bottom: 13px;
+  left: 10px;
+}
+
 .fotd .card .card-text .span-source {
   color: #fff;
   background: #0044cc;
   padding: 0.3rem 0.6rem 0.3rem 0.6rem;
-  border-radius: 20px;
+  border-radius: 10px;
   font-size: 0.8rem;
 }
 
