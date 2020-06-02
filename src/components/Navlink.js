@@ -11,6 +11,9 @@ export default function Navlink(props) {
           Top 10
         </NavLink>
       </li>
+      <li className="li-link">
+        <NavLink to="/search" activeClassName="selected" exact></NavLink>
+      </li>
 
       <li>
         <NavLink to="/submitfact" exact>
