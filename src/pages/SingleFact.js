@@ -1,6 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import Unsplash from "react-unsplash-wrapper";
+import uuid from "react-uuid";
 
 import Data from "../Facts.json";
 import Like from "./Homepage/Like";
@@ -27,7 +28,11 @@ export default function SingleFact(props) {
             <span>Keywords :</span>
 
             {fact.keywords.map((e) => {
-              return <span className="single-keywords">{e} </span>;
+              return (
+                <span key={uuid()} className="single-keywords">
+                  {e}{" "}
+                </span>
+              );
             })}
           </div>
           <div className="like-div">

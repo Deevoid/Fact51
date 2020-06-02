@@ -12,7 +12,7 @@ import Like from "./Like";
 export default function FactList(props) {
   const [currentPage, setCurrentPage] = useState(1);
   const [currentPost, setCurrentPost] = useState([]);
-  const [postperpage, setPostPerPage] = useState(8);
+  const postperpage = 9;
   const [isPaginate, setPaginate] = useState(true);
 
   const indexoflastPost = currentPage * postperpage;
@@ -70,7 +70,7 @@ export default function FactList(props) {
               key={fact.id}
               cardImg={
                 <Unsplash
-                  width="369"
+                  width="350"
                   height="300"
                   keywords={fact.keywords.toString()}
                   img
