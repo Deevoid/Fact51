@@ -18,7 +18,7 @@ import SearchFact from "./pages/SearchFact";
 function App() {
   return (
     <React.Fragment>
-      <Router history={hashHistory}>
+      <Router>
         <Navbar />
         <Switch>
           <Route path="/" exact component={Homepage} />
