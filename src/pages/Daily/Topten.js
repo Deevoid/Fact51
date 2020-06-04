@@ -23,7 +23,7 @@ export default function Topten() {
               key={fact.id}
               cardImg={
                 <>
-                  {!loading && !isSupported && (
+                  {!loading && isSupported && (
                     <div className="share-div">
                       <span
                         className="span-share"
