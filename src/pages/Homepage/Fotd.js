@@ -32,7 +32,7 @@ export default function Fotd() {
                   className="span-share"
                   onClick={() => {
                     const title = "Fact of the day";
-                    let text = fact.text;
+                    let text = `*Fact of the day* ${fact.text}`;
                     share({ title, text });
                   }}
                 >
