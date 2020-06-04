@@ -557,7 +557,7 @@ footer .footer-div p {
 .home-list .card .card-body .span-category {
   display: inline-block;
   color: #fff;
-  background: #ff6584;
+  background: #5c53cb;
   padding: 0.3rem 0.6rem 0.3rem 0.6rem;
   border-radius: 20px;
   margin: 0 0 0.8rem 0;
@@ -771,11 +771,11 @@ footer .footer-div p {
 .fotd .card .card-text p {
   width: 100%;
   line-height: 1.6;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   word-wrap: break-word;
 }
 
-.fotd .card .card-text a {
+.fotd .card .card-text .tags {
   position: absolute;
   z-index: 3;
   bottom: 13px;
@@ -783,6 +783,16 @@ footer .footer-div p {
 }
 
 .fotd .card .card-text .span-source {
+  color: #fff;
+  background: #0044cc;
+  padding: 0.3rem 0.6rem 0.3rem 0.6rem;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  margin-right: 1rem;
+}
+
+.fotd .card .card-text .span-share {
+  cursor: pointer;
   color: #fff;
   background: #0044cc;
   padding: 0.3rem 0.6rem 0.3rem 0.6rem;

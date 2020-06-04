@@ -1,4 +1,4 @@
-import React, { useState, lazy, Suspense } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Fuse from "fuse.js";
 import TextField from "@material-ui/core/TextField";
@@ -8,9 +8,7 @@ import Lottie from "lottie-react-web";
 
 import animation from "../Lottiefiles/sherlock.json";
 import Data from "../Facts.json";
-
-const Image = lazy(() => import("./Homepage/Image"));
-const renderLoader = () => <p>Loading</p>;
+import Image from "./Homepage/Image";
 
 export default function SearchFact() {
   const [formValue, setFormValue] = useState("");
@@ -71,11 +69,7 @@ export default function SearchFact() {
           return (
             <FactCard
               key={fact.id}
-              cardImg={
-                <Suspense fallback={renderLoader()}>
-                  <Image keywords={fact.keywords.toString()} />
-                </Suspense>
-              }
+              cardImg={<Image keywords={fact.keywords.toString()} />}
               cardBody={
                 <>
                   <p className="span-category">Category: {fact.category}</p>

@@ -7,7 +7,7 @@ import Like from "../Homepage/Like";
 import Data from "../../Facts.json";
 
 export default function Topten() {
-  const top = [...Data].sort((a, b) => (a.like > b.id ? 1 : -1)).slice(0, 10);
+  const top = [...Data].sort((a, b) => (a.like < b.like ? 1 : -1)).slice(0, 10);
 
   return (
     <div className="container">

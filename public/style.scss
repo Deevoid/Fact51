@@ -157,7 +157,7 @@
       .span-category {
         display: inline-block;
         color: #fff;
-        background: $accentLight;
+        background: $primaryLight;
         padding: 0.3rem 0.6rem 0.3rem 0.6rem;
         border-radius: 20px;
         margin: 0 0 0.8rem 0;
@@ -335,16 +335,25 @@
       p {
         width: 100%;
         line-height: 1.6;
-        margin-bottom: 2rem;
+        margin-bottom: 3rem;
         word-wrap: break-word;
       }
-      a {
+      .tags {
         position: absolute;
         z-index: 3;
         bottom: 13px;
         left: 10px;
       }
       .span-source {
+        color: #fff;
+        background: rgb(0, 68, 204);
+        padding: 0.3rem 0.6rem 0.3rem 0.6rem;
+        border-radius: 10px;
+        font-size: 0.8rem;
+        margin-right: 1rem;
+      }
+      .span-share {
+        cursor: pointer;
         color: #fff;
         background: rgb(0, 68, 204);
         padding: 0.3rem 0.6rem 0.3rem 0.6rem;

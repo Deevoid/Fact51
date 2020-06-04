@@ -8,7 +8,7 @@ import Like from "./Homepage/Like";
 
 export default function SingleFact(props) {
   const factId = useParams().factId;
-  const filteredFact = [...Data].filter((fact) => fact.id === factId);
+  const filteredFact = [...Data].filter((fact) => fact.id == factId);
   const fact = filteredFact[0];
   return (
     <div className="full-fact">

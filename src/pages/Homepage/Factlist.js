@@ -1,5 +1,4 @@
-import React, { useState, useEffect, Suspense, lazy } from "react";
-import Unsplash from "react-unsplash-wrapper";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Pagination from "@material-ui/lab/Pagination";
 import Autocomplete from "@material-ui/lab/Autocomplete";
