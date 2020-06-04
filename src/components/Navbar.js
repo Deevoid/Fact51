@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import { HamburgerElastic } from "react-animated-burgers";
 import ScrollLock from "react-scrolllock";
-import { Navlink } from "react-router-dom";
 
 import NavItem from "./NavItem";
 import Logo from "./Logo";

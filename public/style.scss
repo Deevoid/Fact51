@@ -115,8 +115,11 @@
     word-wrap: break-word;
     background: #fff;
     border-radius: 10px;
-    img {
-      object-fit: cover;
+    .card-img {
+      min-height: 300px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       width: 100%;
     }
     .card-header {

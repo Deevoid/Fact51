@@ -1,15 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, lazy, Suspense } from "react";
 import { Link } from "react-router-dom";
 import Fuse from "fuse.js";
 import Unsplash from "react-unsplash-wrapper";
 import TextField from "@material-ui/core/TextField";
 
-import Like from "./Homepage/Like";
 import FactCard from "./Homepage/FactCard";
 import Lottie from "lottie-react-web";
 
 import animation from "../Lottiefiles/sherlock.json";
 import Data from "../Facts.json";
+
+const Image = lazy(() => import("./Homepage/Image"));
+const renderLoader = () => <p>Loading</p>;
 
 export default function SearchFact() {
   const [formValue, setFormValue] = useState("");
@@ -29,7 +31,7 @@ export default function SearchFact() {
       },
       {
         name: "keywords",
-        weight: 1,
+        weight: 0.6,
       },
     ],
   };
@@ -71,12 +73,9 @@ export default function SearchFact() {
             <FactCard
               key={fact.id}
               cardImg={
-                <Unsplash
-                  width="350"
-                  height="300"
-                  keywords={fact.keywords.toString()}
-                  img
-                />
+                <Suspense fallback={renderLoader()}>
+                  <Image keywords={fact.keywords.toString()} />
+                </Suspense>
               }
               cardBody={
                 <>

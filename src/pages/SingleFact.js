@@ -16,7 +16,6 @@ export default function SingleFact(props) {
         <div className="fact-img">
           <Unsplash keywords={fact.keywords.toString()} />
         </div>
-        <div className="img-overlay"></div>
         <div className="fact-text">
           <span className="span-category">Category: {fact.category} </span>
           <a href={fact.source} target="_blank" rel="noopener noreferrer">

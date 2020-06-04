@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Suspense, lazy } from "react";
 import Unsplash from "react-unsplash-wrapper";
 import { Link } from "react-router-dom";
 import Pagination from "@material-ui/lab/Pagination";
@@ -8,6 +8,8 @@ import TextField from "@material-ui/core/TextField";
 import FactCard from "./FactCard";
 import Data from "../../Facts.json";
 import Like from "./Like";
+const Image = lazy(() => import("./Image"));
+const renderLoader = () => <p>Loading</p>;
 
 export default function FactList(props) {
   const [currentPage, setCurrentPage] = useState(1);
@@ -69,12 +71,9 @@ export default function FactList(props) {
             <FactCard
               key={fact.id}
               cardImg={
-                <Unsplash
-                  width="350"
-                  height="300"
-                  keywords={fact.keywords.toString()}
-                  img
-                />
+                <Suspense fallback={renderLoader()}>
+                  <Image keywords={fact.keywords.toString()} />
+                </Suspense>
               }
               cardHeader={<Like nana={fact.like} idfact={fact.id} />}
               cardBody={
@@ -93,6 +92,9 @@ export default function FactList(props) {
       <div className="paginate">
         {isPaginate && (
           <Pagination
+            siblingCount={1}
+            boundaryCount={1}
+            size="small"
             count={Math.ceil(Data.length / postperpage)}
             onChange={handlepage}
             showFirstButton
