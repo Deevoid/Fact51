@@ -794,7 +794,7 @@ footer .footer-div p {
 .fotd .card .card-text .span-share {
   cursor: pointer;
   color: #fff;
-  background: #0044cc;
+  background: #ff3f3f;
   padding: 0.3rem 0.6rem 0.3rem 0.6rem;
   border-radius: 10px;
   font-size: 0.8rem;
@@ -864,6 +864,7 @@ footer .footer-div p {
       -ms-flex-direction: column;
           flex-direction: column;
   width: 100%;
+  max-width: 350px;
   margin-bottom: 1rem;
   padding: 0;
   word-wrap: break-word;

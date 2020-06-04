@@ -12,19 +12,6 @@ export default function Fotd() {
   const fact = Data[day % Data.length];
   const { loading, isSupported, share } = useWebShare();
 
-  console.log(isSupported);
-
-  function submitForm(actionFn) {
-    const title = "hello";
-    const text = "there this is the content to share";
-    const url = "www.google.com";
-    actionFn({
-      title,
-      text,
-      url,
-    });
-  }
-
   return (
     <div className="fotd">
       <div className="container">
@@ -41,7 +28,14 @@ export default function Fotd() {
                 <span className="span-source">View source</span>
               </a>
               {!loading && isSupported && (
-                <span className="span-share" onClick={() => submitForm(share)}>
+                <span
+                  className="span-share"
+                  onClick={() => {
+                    const title = "Fact of the day";
+                    let text = fact.text;
+                    share({ title, text });
+                  }}
+                >
                   Share <i className="fas fa-share-alt"></i>
                 </span>
               )}
