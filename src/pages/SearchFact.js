@@ -1,7 +1,6 @@
 import React, { useState, lazy, Suspense } from "react";
 import { Link } from "react-router-dom";
 import Fuse from "fuse.js";
-import Unsplash from "react-unsplash-wrapper";
 import TextField from "@material-ui/core/TextField";
 
 import FactCard from "./Homepage/FactCard";

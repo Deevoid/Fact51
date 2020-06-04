@@ -8,8 +8,7 @@ import TextField from "@material-ui/core/TextField";
 import FactCard from "./FactCard";
 import Data from "../../Facts.json";
 import Like from "./Like";
-const Image = lazy(() => import("./Image"));
-const renderLoader = () => <p>Loading</p>;
+import Image from "./Image";
 
 export default function FactList(props) {
   const [currentPage, setCurrentPage] = useState(1);
@@ -70,11 +69,7 @@ export default function FactList(props) {
           return (
             <FactCard
               key={fact.id}
-              cardImg={
-                <Suspense fallback={renderLoader()}>
-                  <Image keywords={fact.keywords.toString()} />
-                </Suspense>
-              }
+              cardImg={<Image keywords={fact.keywords.toString()} />}
               cardHeader={<Like nana={fact.like} idfact={fact.id} />}
               cardBody={
                 <>
