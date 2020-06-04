@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Fuse from "fuse.js";
 import TextField from "@material-ui/core/TextField";
+import useWebShare from "react-use-web-share";
+import { motion } from "framer-motion";
 
 import FactCard from "./Homepage/FactCard";
 import Lottie from "lottie-react-web";
@@ -11,6 +13,8 @@ import Data from "../Facts.json";
 import Image from "./Homepage/Image";
 
 export default function SearchFact() {
+  const { loading, isSupported, share } = useWebShare();
+
   const [formValue, setFormValue] = useState("");
   const options = {
     shouldSort: true,
@@ -69,7 +73,36 @@ export default function SearchFact() {
           return (
             <FactCard
               key={fact.id}
-              cardImg={<Image keywords={fact.keywords.toString()} />}
+              cardImg={
+                <>
+                  <Image keywords={fact.keywords.toString()} />
+                  {!loading && !isSupported && (
+                    <div className="share-div">
+                      <span
+                        className="span-share"
+                        onClick={() => {
+                          let text = "Check out this amazing fact on *fact51*";
+                          share({ text });
+                        }}
+                      >
+                        <motion.i
+                          className="fas fa-share-alt"
+                          animate={{
+                            scale: [0.8, 1.1, 0.8, 1.1, 0.8],
+                          }}
+                          transition={{
+                            duration: 1.5,
+                            ease: "easeInOut",
+                            times: [0, 0.2, 0.5, 0.8, 1],
+                            loop: Infinity,
+                            repeatDelay: 2,
+                          }}
+                        ></motion.i>
+                      </span>
+                    </div>
+                  )}
+                </>
+              }
               cardBody={
                 <>
                   <p className="span-category">Category: {fact.category}</p>

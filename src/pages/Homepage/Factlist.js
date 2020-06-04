@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import Pagination from "@material-ui/lab/Pagination";
 import Autocomplete from "@material-ui/lab/Autocomplete";
 import TextField from "@material-ui/core/TextField";
+import useWebShare from "react-use-web-share";
+import { motion } from "framer-motion";
 
 import FactCard from "./FactCard";
 import Data from "../../Facts.json";
@@ -14,6 +16,8 @@ export default function FactList(props) {
   const [currentPost, setCurrentPost] = useState([]);
   const postperpage = 9;
   const [isPaginate, setPaginate] = useState(true);
+
+  const { loading, isSupported, share } = useWebShare();
 
   const indexoflastPost = currentPage * postperpage;
   const indexoffirstpost = indexoflastPost - postperpage;
@@ -68,11 +72,41 @@ export default function FactList(props) {
           return (
             <FactCard
               key={fact.id}
-              cardImg={<Image keywords={fact.keywords.toString()} />}
+              cardImg={
+                <>
+                  <Image keywords={fact.keywords.toString()} />
+                  {!loading && isSupported && (
+                    <div className="share-div">
+                      <span
+                        className="span-share"
+                        onClick={() => {
+                          let text = "Check out this amazing fact on *fact51*";
+                          share({ text });
+                        }}
+                      >
+                        <motion.i
+                          className="fas fa-share-alt"
+                          animate={{
+                            scale: [0.8, 1.1, 0.8, 1.1, 0.8],
+                          }}
+                          transition={{
+                            duration: 1.5,
+                            ease: "easeInOut",
+                            times: [0, 0.2, 0.5, 0.8, 1],
+                            loop: Infinity,
+                            repeatDelay: 2,
+                          }}
+                        ></motion.i>
+                      </span>
+                    </div>
+                  )}
+                </>
+              }
               cardHeader={<Like nana={fact.like} idfact={fact.id} />}
               cardBody={
                 <>
                   <p className="span-category">Category: {fact.category}</p>
+
                   <p className="fact-text">{fact.text}</p>
                   <Link to={`/${fact.id}`}>
                     <p className="read-more">Read More</p>
