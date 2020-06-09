@@ -120,26 +120,6 @@
       justify-content: center;
       align-items: center;
       width: 100%;
-      .share-div {
-        z-index: 2;
-        height: 3rem;
-        width: 3rem;
-        position: absolute;
-        right: 0;
-        top: 0;
-        clip-path: circle(90%);
-        background: rgb(255, 63, 63);
-        border-radius: 0 0 0 50px;
-        padding: 0.5rem 0 0 1rem;
-      }
-      .span-share {
-        cursor: pointer;
-        color: #fff;
-        // background: rgb(255, 63, 63);
-        // padding: 0.3rem 0.6rem 0.3rem 0.6rem;
-        border-radius: 10px;
-        font-size: 1.4rem;
-      }
     }
     .card-header {
       padding: 0 1rem;
@@ -180,6 +160,19 @@
         padding: 0.3rem 0.6rem 0.3rem 0.6rem;
         border-radius: 20px;
         margin: 0 0 0.8rem 0;
+        font-size: 0.8rem;
+      }
+      .span-share {
+        i {
+          padding: 0 0.3rem;
+        }
+        cursor: pointer;
+        display: inline-block;
+        color: #fff;
+        background: rgb(255, 63, 63);
+        padding: 0.3rem 0.6rem 0.3rem 0.6rem;
+        border-radius: 20px;
+        margin: 0 0 0.8rem 1rem;
         font-size: 0.8rem;
       }
     }
@@ -226,26 +219,6 @@
         0px 24px 38px 3px rgba(0, 0, 0, 0.14),
         0px 9px 46px 8px rgba(0, 0, 0, 0.12);
     }
-    .share-div {
-      z-index: 2;
-      height: 3rem;
-      width: 3rem;
-      position: absolute;
-      right: 0;
-      top: 0;
-      clip-path: circle(90%);
-      background: rgb(255, 63, 63);
-      border-radius: 0 0 0 50px;
-      padding: 0.5rem 0 0 1rem;
-    }
-    .span-share {
-      cursor: pointer;
-      color: #fff;
-      // background: rgb(255, 63, 63);
-      // padding: 0.3rem 0.6rem 0.3rem 0.6rem;
-      border-radius: 10px;
-      font-size: 1.4rem;
-    }
 
     .like-div {
       border-top: solid 1.5px $accentLight;
@@ -277,6 +250,20 @@
       background: rgb(0, 68, 204);
       padding: 0.3rem 0.6rem 0.3rem 0.6rem;
       border-radius: 20px;
+      font-size: 0.8rem;
+      margin-right: 0.6rem;
+    }
+    .span-share {
+      i {
+        padding: 0 0.3rem;
+      }
+      cursor: pointer;
+      display: inline-block;
+      color: #fff;
+      background: rgb(255, 63, 63);
+      padding: 0.3rem 0.6rem 0.3rem 0.6rem;
+      border-radius: 20px;
+      margin: 0.6rem 0 0.8rem 0;
       font-size: 0.8rem;
     }
     .fact-p {
@@ -458,27 +445,6 @@
     .card-img {
       object-fit: cover;
       width: 100%;
-      .share-div {
-        backdrop-filter: blur(15px);
-        z-index: 2;
-        height: 3rem;
-        width: 3rem;
-        position: absolute;
-        right: 0;
-        top: 0;
-        clip-path: circle(90%);
-        background: rgba(48, 48, 48, 0.2);
-        border-radius: 0 0 0 50px;
-        padding: 0.5rem 0 0 1rem;
-      }
-      .span-share {
-        cursor: pointer;
-        color: #fff;
-        // background: rgb(255, 63, 63);
-        // padding: 0.3rem 0.6rem 0.3rem 0.6rem;
-        border-radius: 10px;
-        font-size: 1.4rem;
-      }
     }
     .card-header {
       padding: 0 1rem;
@@ -519,6 +485,19 @@
         padding: 0.3rem 0.6rem 0.3rem 0.6rem;
         border-radius: 20px;
         margin: 0 0 0.8rem 0;
+        font-size: 0.8rem;
+      }
+      .span-share {
+        i {
+          padding: 0 0.3rem;
+        }
+        cursor: pointer;
+        display: inline-block;
+        color: #fff;
+        background: rgb(255, 63, 63);
+        padding: 0.3rem 0.6rem 0.3rem 0.6rem;
+        border-radius: 20px;
+        margin: 0 0 0.8rem 1rem;
         font-size: 0.8rem;
       }
     }
@@ -580,23 +559,6 @@
       position: relative;
       object-fit: cover;
       width: 100%;
-      .share-div {
-        z-index: 2;
-        height: 3rem;
-        width: 3rem;
-        position: absolute;
-        right: 0;
-        top: 0;
-        background: rgb(255, 63, 63);
-        border-radius: 0 0 0 50px;
-        padding: 0.5rem 0 0 1rem;
-      }
-      .span-share {
-        cursor: pointer;
-        color: #fff;
-        border-radius: 10px;
-        font-size: 1.4rem;
-      }
     }
     .card-header {
       padding: 0 1rem;
@@ -637,6 +599,19 @@
         padding: 0.3rem 0.6rem 0.3rem 0.6rem;
         border-radius: 20px;
         margin: 0 0 0.8rem 0;
+        font-size: 0.8rem;
+      }
+      .span-share {
+        i {
+          padding: 0 0.3rem;
+        }
+        cursor: pointer;
+        display: inline-block;
+        color: #fff;
+        background: rgb(255, 63, 63);
+        padding: 0.3rem 0.6rem 0.3rem 0.6rem;
+        border-radius: 20px;
+        margin: 0 0 0.8rem 1rem;
         font-size: 0.8rem;
       }
     }

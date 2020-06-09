@@ -22,35 +22,34 @@ export default function SingleFact(props) {
           <Unsplash keywords={fact.keywords.toString()} />
         </div>
         <div className="fact-text">
-          {!loading && isSupported && (
-            <div className="share-div">
-              <span
-                className="span-share"
-                onClick={() => {
-                  let text = "Check out this amazing fact on *fact51*";
-                  share({ text });
-                }}
-              >
-                <motion.i
-                  className="fas fa-share-alt"
-                  animate={{
-                    scale: [0.8, 1.1, 0.8, 1.1, 0.8],
-                  }}
-                  transition={{
-                    duration: 1.5,
-                    ease: "easeInOut",
-                    times: [0, 0.2, 0.5, 0.8, 1],
-                    loop: Infinity,
-                    repeatDelay: 2,
-                  }}
-                ></motion.i>
-              </span>
-            </div>
-          )}
           <span className="span-category">Category: {fact.category} </span>
           <a href={fact.source} target="_blank" rel="noopener noreferrer">
             <span className="span-source">View source</span>
           </a>
+          {!loading && isSupported && (
+            <span
+              className="span-share"
+              onClick={() => {
+                let text = "Check out this amazing fact on *fact51*";
+                share({ text });
+              }}
+            >
+              Share
+              <motion.i
+                className="fas fa-share-alt"
+                animate={{
+                  rotate: [20, -20, 20, -20, 0],
+                }}
+                transition={{
+                  duration: 1,
+                  ease: "easeInOut",
+                  times: [0, 0.2, 0.5, 0.8, 1],
+                  loop: Infinity,
+                  repeatDelay: 2,
+                }}
+              ></motion.i>
+            </span>
+          )}
           <p className="fact-p">{fact.text}</p>
 
           <div className="keywords">

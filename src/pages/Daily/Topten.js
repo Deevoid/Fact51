@@ -22,44 +22,43 @@ export default function Topten() {
             <FactCard
               key={fact.id}
               cardImg={
-                <>
-                  {!loading && isSupported && (
-                    <div className="share-div">
-                      <span
-                        className="span-share"
-                        onClick={() => {
-                          let text = "Check out this amazing fact on *fact51*";
-                          share({ text });
-                        }}
-                      >
-                        <motion.i
-                          className="fas fa-share-alt"
-                          animate={{
-                            scale: [0.8, 1.1, 0.8, 1.1, 0.8],
-                          }}
-                          transition={{
-                            duration: 1.5,
-                            ease: "easeInOut",
-                            times: [0, 0.2, 0.5, 0.8, 1],
-                            loop: Infinity,
-                            repeatDelay: 2,
-                          }}
-                        ></motion.i>
-                      </span>
-                    </div>
-                  )}
-                  <Unsplash
-                    width="369"
-                    height="300"
-                    keywords={fact.keywords.toString()}
-                    img
-                  />
-                </>
+                <Unsplash
+                  width="369"
+                  height="300"
+                  keywords={fact.keywords.toString()}
+                  img
+                />
               }
               cardHeader={<Like nana={fact.like} idfact={fact.id} />}
               cardBody={
                 <>
-                  <p className="span-category">Category: {fact.category}</p>
+                  <span className="span-category">
+                    Category: {fact.category}
+                  </span>
+                  {!loading && isSupported && (
+                    <span
+                      className="span-share"
+                      onClick={() => {
+                        let text = "Check out this amazing fact on *fact51*";
+                        share({ text });
+                      }}
+                    >
+                      Share
+                      <motion.i
+                        className="fas fa-share-alt"
+                        animate={{
+                          rotate: [20, -20, 20, -20, 0],
+                        }}
+                        transition={{
+                          duration: 1,
+                          ease: "easeInOut",
+                          times: [0, 0.2, 0.5, 0.8, 1],
+                          loop: Infinity,
+                          repeatDelay: 2,
+                        }}
+                      ></motion.i>
+                    </span>
+                  )}
                   <p className="fact-text">{fact.text}</p>
                   <Link to={`/${fact.id}`}>
                     <p className="read-more">Read More</p>
